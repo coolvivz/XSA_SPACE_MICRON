@@ -1,0 +1,12 @@
+PROCEDURE "getBookings" ( )
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA <default_schema_name>
+   READS SQL DATA AS
+BEGIN
+   /*************************************
+       Write your procedure logic 
+   *************************************/
+   SELECT CARRID, SUM("LOCCURAM") AS PRICE  FROM SBOOK GROUP BY CARRID;
+   
+END
